@@ -18,8 +18,8 @@ class CreateProductCategoriesTable extends Migration
             $table->string('category_name');
             $table->binary('image');
             $table->string('category_slug');
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

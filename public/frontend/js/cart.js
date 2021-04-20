@@ -69,7 +69,10 @@ function addToCart(pid, qty)
     {
         product_quantity =  jQuery('select[id="product_quantity"]').val();
     }
-    product_quantity = qty;
+    else
+    {
+        product_quantity = qty;
+    }
 
     if (pid != null)
     {
@@ -77,7 +80,7 @@ function addToCart(pid, qty)
             '<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">x</a>' +
             'Added</div>');
     }
-
+    //alert(product_quantity);
     jQuery.ajax({
         url:'/addToCart',
         data:{
@@ -89,7 +92,7 @@ function addToCart(pid, qty)
         },
         type:'post',
         success: function (result) {
-            console.log(result);
+             alert(result);
         }
 
     });

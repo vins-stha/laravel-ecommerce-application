@@ -59,3 +59,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## How to Run this Application
+-  Clone the repository
+-  Run the migration files (php artisan migrate)
+-  Create admin user name (manually) with username,email and password

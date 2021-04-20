@@ -13,11 +13,12 @@ class CreateProductBrandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brands', function (Blueprint $table) {
+        Schema::create('product_brands', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->binary('brand_logo');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

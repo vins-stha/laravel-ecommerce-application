@@ -19,10 +19,10 @@ class CreateCouponsTable extends Migration
             $table->string('coupon_code');
 
             $table->string('coupon_value');
-            $table->date('valid_from');
-            $table->date('valid_till');
-            $table->timestamp('created_at');
-            $table->timestamps('updated_at');
+            $table->date('valid_from')->nullable();
+            $table->date('valid_till')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

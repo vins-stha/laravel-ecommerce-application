@@ -32,6 +32,7 @@ class FrontendController extends Controller
 
     public function productView(Request $request, $id)
     {
+        $datas ['categories'] = DB::table('product_categories')->get();
         $datas['product'] = DB::table('products')
             ->where(['id' => $id])
             ->get();
@@ -73,7 +74,7 @@ class FrontendController extends Controller
                 ->where([ 'product_id' => $request->post('product_id')])
 
                 ->delete();
-            $success = $res == 1 ? "Deleted successfully" : "Something went wrong could not delted";
+            $success = $res == 1 ? "Deleted successfully" : "Something went wrong could not delete the item";
         }
         else
         {
@@ -100,8 +101,8 @@ class FrontendController extends Controller
             }
         }
         $allCartItems = populateCartItems();
-        //echo json_encode($success) ;
-        return json_encode($allCartItems);
+        echo json_encode($success) ;
+        //return json_encode($allCartItems);
     }
 
     /***
@@ -121,18 +122,7 @@ class FrontendController extends Controller
         {
             $user_id = getUserTempId();
         }
-//        $cartItems = DB::table('cart')
-//            ->where(['user_id' => $user_id])
-//            ->get();
-//      //  var_dump($cartItems);
-//        foreach ($cartItems as $item)
-//        {
-//            $details = DB::table('products')
-//                ->where(['id' => $item->product_id])
-//                ->get();
-//            $item->details = $details;
-//
-//        }
+
         $cartItems = DB::table('cart')
             ->leftJoin('products', 'products.id','=','cart.product_id')
             ->where(['user_id' => $user_id])
