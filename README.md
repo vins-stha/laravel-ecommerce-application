@@ -65,3 +65,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 -  Clone the repository
 -  Run the migration files (php artisan migrate)
 -  Create admin user name (manually) with username,email and password
+
+
+## links for UI
+- Admin panel **[Cool Admin](https://github.com/puikinsh/CoolAdmin)**
+- Frontend **[Daily shop Free css template](https://www.free-css.com/free-css-templates/page236/dailyshop)**
+
+https://vins-stha.github.io/
+
